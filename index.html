@@ -47,7 +47,7 @@
         }, 1000);
         if (window.Telegram && window.Telegram.WebApp) {
           console.log("Отправляем команду Telegram на закрытие WebView...");
-          // Telegram.WebApp.close();
+          Telegram.WebApp.close();
         } else {
           console.log("API Telegram недоступно (открыто не в Telegram).");
           alert("Это приложение должно быть открыто внутри Telegram.");

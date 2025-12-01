@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест закрытия Web App</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      button {
+        padding: 15px 25px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Тестовое Web App</h1>
+    <p>Нажмите кнопку, чтобы закрыть это окно и вернуться к боту.</p>
+
+    <a href="https://t.me/RKNaPrivaleBot" onclick="closeCurrentWindow()"
+      >Закрыть окно Web App</a
+    >
+
+    <!-- !!! ОБЯЗАТЕЛЬНОЕ ПОДКЛЮЧЕНИЕ СКРИПТА !!! -->
+    <script src="telegram.org"></script>
+
+    <script>
+      function closeCurrentWindow() {
+        setTimeout(() => {
+          console.log("11", 11);
+        }, 1000);
+        if (window.Telegram && window.Telegram.WebApp) {
+          console.log("Отправляем команду Telegram на закрытие WebView...");
+          Telegram.WebApp.close();
+        } else {
+          console.log("API Telegram недоступно (открыто не в Telegram).");
+          alert("Это приложение должно быть открыто внутри Telegram.");
+        }
+      }
+    </script>
+  </body>
+</html>

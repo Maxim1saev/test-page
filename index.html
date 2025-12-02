@@ -49,17 +49,19 @@
 
       // Функция закрытия
       function closeWebApp() {
-        if (window.Telegram && window.Telegram.WebApp) {
-          // Закрываем Web App (возвращаемся в Telegram)
-          Telegram.WebApp.close();
-        } else {
-          // Альтернатива для браузера
-          alert(
-            "В обычном браузере закрыть нельзя. В Telegram Web App эта кнопка вернёт вас в чат."
-          );
-          // Или пытаемся открыть Telegram
-          // window.location.href = "https://t.me/RKNaPrivaleBot?start=XXX";
-        }
+
+        window.location.href = "tg:resolve";
+        // if (window.Telegram && window.Telegram.WebApp) {
+        //   // Закрываем Web App (возвращаемся в Telegram)
+        //   Telegram.WebApp.close();
+        // } else {
+        //   // Альтернатива для браузера
+        //   alert(
+        //     "В обычном браузере закрыть нельзя. В Telegram Web App эта кнопка вернёт вас в чат."
+        //   );
+        //   // Или пытаемся открыть Telegram
+        //   // window.location.href = "https://t.me/RKNaPrivaleBot?start=XXX";
+        // }
       }
 
       // Инициализация

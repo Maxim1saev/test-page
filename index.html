@@ -51,19 +51,19 @@
       function closeWebApp() {
 
 
-        window.open("https://t.me/RKNaPrivaleBot?start=wallet1c3948c6-54b3-486c-8806-570945c99474", '_blank')
-        // window.location.href = "tg:resolve";
-        // if (window.Telegram && window.Telegram.WebApp) {
-        //   // Закрываем Web App (возвращаемся в Telegram)
-        //   Telegram.WebApp.close();
-        // } else {
-        //   // Альтернатива для браузера
-        //   alert(
-        //     "В обычном браузере закрыть нельзя. В Telegram Web App эта кнопка вернёт вас в чат."
-        //   );
-        //   // Или пытаемся открыть Telegram
-        //   // window.location.href = "https://t.me/RKNaPrivaleBot?start=XXX";
-        // }
+        // window.open("https://t.me/RKNaPrivaleBot?start=wallet1c3948c6-54b3-486c-8806-570945c99474", '_blank')
+        if (window.Telegram && window.Telegram.WebApp) {
+          // Закрываем Web App (возвращаемся в Telegram)
+         window.Telegram.WebView.postEvent('web_app_exit_fullscreen');
+
+        } else {
+          // Альтернатива для браузера
+          alert(
+            "В обычном браузере закрыть нельзя. В Telegram Web App эта кнопка вернёт вас в чат."
+          );
+          // Или пытаемся открыть Telegram
+          // window.location.href = "https://t.me/RKNaPrivaleBot?start=XXX";
+        }
       }
 
       // Инициализация
